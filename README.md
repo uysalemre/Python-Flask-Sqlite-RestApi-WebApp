@@ -79,11 +79,11 @@ it built on **Python**,**Flask Framework** and **Sqlite** database.
    - [x] Create Conceptual Model
    - [x] First Sprint 
    - [x] Make a customer meeting and commit files for first version.
-   - [] Create Data Model and ER diagrams
-   - [] Create System Architecture
-   - [] Create Component Diagram
-   - [] Create Sequence Diagram
-   - [] Complete Second and Third Sprint
+   - [ ] Create Data Model and ER diagrams
+   - [ ] Create System Architecture
+   - [ ] Create Component Diagram
+   - [ ] Create Sequence Diagram
+   - [ ] Complete Second and Third Sprint
 
 
 
