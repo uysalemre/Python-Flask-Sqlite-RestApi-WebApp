@@ -45,7 +45,7 @@ it built on **Python**,**Flask Framework** and **Sqlite** database.
    - Define Epics
    - Define Non-functional Issues: Security, Performance ...
    - User stories must match with component size and they must be mapped to epics.
-   - A use case for each epic in your project plan also containing alternative flows. One diagram for each software requirement is needed.Example: http://upload.wikimedia.org/wikipedia/commons/1/1d/Use_case_restaurant_model.sv g
+   - A use case for each epic 
 
 4. EARLY SYSTEM MODELS
    - [Conceptual model](DevOps/conceptual.pdf)
