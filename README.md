@@ -35,55 +35,55 @@ it built on **Python**,**Flask Framework** and **Sqlite** database.
 ## Development Cycle In Agile Methodology
 
 1. MEETING
-   -Define The Requirements
+   - Define The Requirements
    
 2. DEFINE THE PROJECT
-   -[Create The Project Charter](DevOps/projectCharter.pdf)
+   - [Create The Project Charter](DevOps/projectCharter.pdf)
    
-3.  USER STORIES
-   -Define User Types
-   -Define Epics
-   -Define Non-functional Issues: Security, Performance ...
-   -User stories must match with component size and they must be mapped to epics.
-   -A use case for each epic in your project plan also containing alternative flows. One diagram for each software requirement is needed.Example: http://upload.wikimedia.org/wikipedia/commons/1/1d/Use_case_restaurant_model.sv g
+3. USER STORIES
+   - Define User Types
+   - Define Epics
+   - Define Non-functional Issues: Security, Performance ...
+   - User stories must match with component size and they must be mapped to epics.
+   - A use case for each epic in your project plan also containing alternative flows. One diagram for each software requirement is needed.Example: http://upload.wikimedia.org/wikipedia/commons/1/1d/Use_case_restaurant_model.sv g
 
 4. EARLY SYSTEM MODELS
-   -[Conceptual model](DevOps/conceptual.pdf)
-   -[Flow diagrams - One diagram for each use case , you can use a flowchart or business process model](DevOps/flowchart.pdf)
+   - [Conceptual model](DevOps/conceptual.pdf)
+   - [Flow diagrams - One diagram for each use case , you can use a flowchart or business process model](DevOps/flowchart.pdf)
 
 5. FIRST SPRINT
-   -[Mockups, Unit Test related to User Stories](DevOps/mockup.bmpr)
+   - [Mockups, Unit Test related to User Stories](DevOps/mockup.bmpr)
    
 6. MEETING
-   -Make a customer meeting to show to development process and check requirements again.
-   -Make some commits.
+   - Make a customer meeting to show to development process and check requirements again.
+   - Make some commits.
   
 7. DATA MODEL
-   -Create ER diagrams for DB
+   - Create ER diagrams for DB
    
 8. SOFTWARE MODEL
-   -System Architecture
-   -Component Diagram
-   -Sequence Diagram
+   - System Architecture
+   - Component Diagram
+   - Sequence Diagram
    
 9. SECOND and THIRD SPRINT
-   -Change Logs for First Sprint
-   -Mockups
+   - Change Logs for First Sprint
+   - Mockups
    
   
   
 ## Task List 
--[x] Make a meeting and define the requirements
--[x] Define the Project and Create Project Charter
--[x] Create User Stories
--[x] Create Conceptual Model
--[x] First Sprint 
--[x] Make a customer meeting and commit files for first version.
--[] Create Data Model and ER diagrams
--[] Create System Architecture
--[] Create Component Diagram
--[] Create Sequence Diagram
--[] Complete Second and Third Sprint
+   - [x] Make a meeting and define the requirements
+   - [x] Define the Project and Create Project Charter
+   - [x] Create User Stories
+   - [x] Create Conceptual Model
+   - [x] First Sprint 
+   - [x] Make a customer meeting and commit files for first version.
+   - [] Create Data Model and ER diagrams
+   - [] Create System Architecture
+   - [] Create Component Diagram
+   - [] Create Sequence Diagram
+   - [] Complete Second and Third Sprint
 
 
 
