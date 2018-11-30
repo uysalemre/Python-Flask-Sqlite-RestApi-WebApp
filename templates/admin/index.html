@@ -1,0 +1,47 @@
+{% extends 'admin/base.html' %}
+{% block body %}
+    <div align="center"><a href="{{url_for('website.adminlogout')}}">LOGOUT FROM ADMIN PANEL</a></div>
+   <!-- DataTables Example -->
+          <div class="card table-container">
+            <div class="card-header" align="center">SETUP YOUR WEBSITE</div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Operation</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Operation</th>
+                      <th>Description</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    <tr>
+                     <td>1. Operation</td>
+                        <td>This website starts with creation of an admin operation please create it</td>
+
+                    </tr>
+                  <tr>
+                     <td>2. Operation</td>
+                        <td>After Logining to Admin Panel First Start Your Categories</td>
+                    </tr>
+                  <tr>
+                     <td>3. Operation</td>
+                        <td>You Can Add Your Model Using Model Area</td>
+                    </tr>
+                  <tr>
+                     <td>4. Operation</td>
+                        <td>Add Photos From Static Files That You Created In Model Photos</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="card-footer small text-muted">Only logined companies can see the PRIVATE information about model.</div>
+          </div>
+
+{% endblock %}

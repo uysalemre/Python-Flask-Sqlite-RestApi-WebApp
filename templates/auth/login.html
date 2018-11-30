@@ -1,0 +1,39 @@
+{% extends "mainpages/layout.html" %}
+{% block title %} LOGIN {% endblock %}
+{% block body %}
+<div class="container">
+        <div class="card card-container-login">
+            <form class="form-signin" action="" method="POST">
+                 {{form.csrf_token}}
+                {% with messages=get_flashed_messages() %}
+                    {% if messages %}
+                <div>
+                    {% for message in messages %}
+                    <div align="center" style="color:green;">{{ message }}</div>
+                    {% endfor %}
+                </div>
+                    {% endif %}
+                {% endwith %}
+                {% for message in form.email.errors %}
+                <div align="center" style="color:red;">Email Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.passw.errors %}
+                <div align="center" style="color:red;">Password Error : {{message}}</div>
+                {% endfor %}
+                <p id="reauth-email" class="reauth-email">COMPANY LOGIN </p>
+                <h4>EMAIL:</h4>{{form.email(placeholder="company email", class="form-control",type="email",id="inputEmail")}}
+                <h4>PASSWORD:</h4>{{form.passw(placeholder="company password", class="form-control",type="password",id="inputPassword")}}
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">LOGIN</button>
+            </form><!-- /form -->
+            <div style="text-align:center;">
+                <button class="btn btn-lg btn-primary btn-block btn-signin" onclick="location.href='{{url_for('website.signup')}}'"> Don't you Signed Up?</button>
+            </div>
+             <div style="text-align:center;">
+                 <a href="{{url_for('website.forgotpassword')}}" class="forgot-password">
+                  <br>  I forgot my PASSWORD?
+                 </a>
+            </div>
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "mainpages/layout.html" %}
+{% block title %} CONTACT {% endblock %}
+{% block body %}
+<div class="container">
+        <div class="card card-container">
+            <form class="form-signin" action="" method="POST" enctype="multipart/form-data">
+                 {{form.csrf_token}}
+                {% with messages=get_flashed_messages() %}
+                    {% if messages %}
+                <div>
+                    {% for message in messages %}
+                    <div align="center" style="color:green;">{{ message }}</div>
+                    {% endfor %}
+                </div>
+                    {% endif %}
+                {% endwith %}
+                 {% for message in form.name.errors %}
+                <div align="center" style="color:red;">Name Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.email.errors %}
+                <div align="center" style="color:red;">Email Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.subject.errors %}
+                <div align="center" style="color:red;">Category Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.message.errors %}
+                <div align="center" style="color:red;">Gender Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.file.errors %}
+                <div align="center" style="color:red;">Age Error :{{message}}</div>
+                {% endfor %}
+                <p id="reauth-email" class="reauth-email"> CONTACT US <br> * Fields are required</p>
+                <h4>* NAME:</h4>{{form.name(placeholder="Name and Surname", class="form-control",id="inputEmail")}}
+                <h4>* EMAIL:</h4>{{form.email(placeholder="Give us your email for communicate with you", class="form-control",type="email",id="inputEmail")}}
+                <h4>* SUBJECT :</h4>{{form.subject(placeholder="What About is  Your Message ?  ", class="form-control",id="inputEmail")}}
+                <h4>* MESSAGE :</h4>{{form.message(placeholder="Type Your Message ...   ", class="form-control",id="inputEmail")}}
+                <h4> FILE (optional docx or pdf ):</h4>
+                {{form.file(class="form-control",id="inputEmail")}}<br>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">SEND MESSAGE</button>
+            </form><!-- /form -->
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+{% endblock %}
