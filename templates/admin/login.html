@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{{url_for('static',filename='css/bootstrap/bootstrap.min.css')}}" rel="stylesheet" id="bootstrap-css">
+    <script src="{{url_for('static',filename='js/bootstrap/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/jquery/navbar.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/navbar.js')}}"></script>
+	<link rel="stylesheet" href="{{url_for('static',filename='css/admin-login.css')}}">
+    <link href="{{url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+	<!-- Animate -->
+	<link rel="stylesheet" href="{{url_for('static',filename='css/animate.css')}}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}">
+
+	<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+	<!-- Modernizr JS -->
+	<script src="{{url_for('static',filename='js/modernizr-2.6.2.min.js')}}"></script>
+</head>
+<body >
+<div class="container">
+        <div class="card card-container-login">
+            <form class="form-signin" action="" method="POST">
+                 {{form.csrf_token}}
+                {% with messages=get_flashed_messages() %}
+                    {% if messages %}
+                <div>
+                    {% for message in messages %}
+                    <div align="center" style="color:green;">{{ message }}</div>
+                    {% endfor %}
+                </div>
+                    {% endif %}
+                {% endwith %}
+                {% for message in form.email.errors %}
+                <div align="center" style="color:red;">Email Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.passw.errors %}
+                <div align="center" style="color:red;">Password Error : {{message}}</div>
+                {% endfor %}
+                <p id="reauth-email" class="reauth-email">ADMIN LOGIN </p>
+                <h4>EMAIL:</h4>{{form.email(placeholder="email", class="form-control",type="email",id="inputEmail")}}
+                <h4>PASSWORD:</h4>{{form.passw(placeholder="password", class="form-control",type="password",id="inputPassword")}}
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">LOGIN</button>
+            </form><!-- /form -->
+             <div style="text-align:center;">
+                 <a href="{{url_for('website.forgotpassword')}}" class="forgot-password">
+                  <br>  I forgot my PASSWORD?
+                 </a>
+            </div>
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+
+</body>
+</html>

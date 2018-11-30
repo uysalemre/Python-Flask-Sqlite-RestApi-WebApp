@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{{url_for('static',filename='css/bootstrap/bootstrap.min.css')}}" rel="stylesheet" id="bootstrap-css">
+    <script src="{{url_for('static',filename='js/bootstrap/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/jquery/navbar.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/navbar.js')}}"></script>
+	<link rel="stylesheet" href="{{url_for('static',filename='css/admin-login.css')}}">
+    <link href="{{url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+	<!-- Animate -->
+	<link rel="stylesheet" href="{{url_for('static',filename='css/animate.css')}}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}">
+
+	<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+	<!-- Modernizr JS -->
+	<script src="{{url_for('static',filename='js/modernizr-2.6.2.min.js')}}"></script>
+
+    <!------ Include the above in your HEAD tag ---------->
+    <title>{{appName}} {% block title %}{% endblock %}</title>
+</head>
+<body >
+<div class="container" >
+  <nav class="navbar navbar-inverse" >
+    <div class="navbar-header">
+		<a class="navbar-brand" href="{{url_for('website.home')}}">{{appName}}</a>
+	</div>
+
+	<div class="collapse navbar-collapse js-navbar-collapse">
+		<ul class="nav navbar-nav">
+             {% if categories %}
+                {% for category in categories %}
+			<li class="dropdown mega-dropdown">
+				<a href="{{url_for('website.category',category=category.name)}}" class="dropdown-toggle" data-toggle="dropdown"><span class="caret"></span>{{category.name}}</a>
+                    {% if actors %}
+                <ul class="dropdown-menu mega-dropdown-menu">
+                     {% if modeling %}
+                    {% for model in modeling %}
+
+                    {% for actor in actors %}
+                    {% if actor.id == model.user_id  and category.id == model.category_id %}
+                         <li class="col-sm-3"><ul><li><a href="{{url_for('website.model',category=category.name,id=actor.id)}}">{{actor.name}} {{actor.surname}}</a></li></ul></li>
+                    {% endif %}
+                    {% endfor %}
+                    {% endfor %}
+                {% endif %}
+				</ul>
+                    {% endif %}
+			</li>
+              {% endfor %}
+        {% endif %}
+
+            <li class="dropdown mega-dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown">CASTING<span class="caret"></span></a>
+
+				<ul class="dropdown-menu mega-dropdown-menu">
+					{% if staticLink %}
+					<li class="col-sm-3">
+						<ul>
+							<li class="dropdown-header">FOLLOW US</li>
+							{% for link in staticLink %}
+                			<li><a href="{{link.link}}">{{link.header}}</a></li>
+                  			{% endfor %}
+						</ul>
+						{% endif %}
+					</li>
+					<li class="col-sm-3">
+						<ul>
+							<li class="dropdown-header">MODELING</li>
+							<li><a href="{{url_for('website.apply')}}">Apply To Be A Model</a></li>
+						</ul>
+					</li>
+					<li class="col-sm-3">
+						<ul>
+							<li class="dropdown-header">COMPANIES</li>
+                            <li><a href="{{url_for('website.login')}}">Login</a></li>
+							<li><a href="{{url_for('website.signup')}}">Sign-up</a></li>
+							<li><a href="{{url_for('website.models')}}">API</a></li>
+						</ul>
+					</li>
+					<li class="col-sm-3">
+						<ul>
+							<li class="dropdown-header">ABOUT US</li>
+                            <li><a href="{{url_for('website.aboutus')}}">About Us</a></li>
+						</ul>
+						<ul>
+							<li class="divider"></li>
+							<li class="dropdown-header">CONTACT US</li>
+                            <li><a href="{{url_for('website.contact')}}">Contact</a></li>
+						</ul>
+					</li>
+				</ul>
+		{% if current_user.is_authenticated and current_user.has_role('Guest')%}
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{current_user.username}}<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+			 <li><a href="{{url_for('website.profile')}}">Profile</a></li>
+            <li><a href="{{url_for('website.logout')}}">Logout</a></li>
+          </ul>
+			</li>
+			{% endif %}
+		</ul>
+    </div>
+  </nav>
+	</div><!-- /.nav-collapse -->
+{% block body %}{% endblock %}
+</body>
+</html>
+
+
+
+

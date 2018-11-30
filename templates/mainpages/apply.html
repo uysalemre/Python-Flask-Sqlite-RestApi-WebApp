@@ -1,0 +1,147 @@
+{% extends "mainpages/layout.html" %}
+{% block title %} APPLY {% endblock %}
+{% block body %}
+  <div class="container">
+        <div class="card card-container">
+            <form class="form-signin" action="" method="POST" enctype="multipart/form-data">
+                 {{form.csrf_token}}
+                {% with messages=get_flashed_messages() %}
+                    {% if messages %}
+                <div>
+                    {% for message in messages %}
+                    <div align="center" style="color:green;">{{ message }}</div>
+                    {% endfor %}
+                </div>
+                    {% endif %}
+                {% endwith %}
+                 {% for message in form.name.errors %}
+                <div align="center" style="color:red;">Name Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.surname.errors %}
+                <div align="center" style="color:red;">Surname Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.email.errors %}
+                <div align="center" style="color:red;">Email Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.category.errors %}
+                <div align="center" style="color:red;">Category Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.gender.errors %}
+                <div align="center" style="color:red;">Gender Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.age.errors %}
+                <div align="center" style="color:red;">Age Error :{{message}}</div>
+                {% endfor %}
+                {% for message in form.phone.errors %}
+                <div align="center" style="color:red;">Phone Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.height.errors %}
+                <div align="center" style="color:red;">Height Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.weight.errors %}
+                <div align="center" style="color:red;">Weight Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.bodycolor.errors %}
+                <div align="center" style="color:red;">Body Color Error :{{message}}</div>
+                {% endfor %}
+                {% for message in form.eyecolor.errors %}
+                <div align="center" style="color:red;">Eye Color Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.haircolor.errors %}
+                <div align="center" style="color:red;">Hair Color Error : {{message}}</div>
+                {% endfor %}
+                 {% for message in form.hairtype.errors %}
+                <div align="center" style="color:red;">Hair Type Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.top.errors %}
+                <div align="center" style="color:red;">Breast Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.middle.errors %}
+                <div align="center" style="color:red;">Waist Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.bottom.errors %}
+                <div align="center" style="color:red;">Hip Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.foot.errors %}
+                <div align="center" style="color:red;">Foot Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.facebook.errors %}
+                <div align="center" style="color:red;">Facebook Link Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.instagram.errors %}
+                <div align="center" style="color:red;">Instagram Link Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.twitter.errors %}
+                <div align="center" style="color:red;">Twitter Link Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.description.errors %}
+                <div align="center" style="color:red;">Description Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.photo1.errors %}
+                <div align="center" style="color:red;">Photo 1 Error :{{message}}</div>
+                {% endfor %}
+                {% for message in form.photo2.errors %}
+                <div align="center" style="color:red;">Photo 2 Error :{{message}}</div>
+                {% endfor %}
+                {% for message in form.photo3.errors %}
+                <div align="center" style="color:red;">Photo 3 Error :{{message}}</div>
+                {% endfor %}
+                {% for message in form.photo4.errors %}
+                <div align="center" style="color:red;">Photo 4 Error :{{message}}</div>
+                {% endfor %}
+                {% for message in form.photo5.errors %}
+                <div align="center" style="color:red;">Photo 5 Error :{{message}}</div>
+                {% endfor %}
+                {% for message in form.photo6.errors %}
+                <div align="center" style="color:red;">Photo 6 Error :{{message}}</div>
+                {% endfor %}
+                {% for message in form.photo7.errors %}
+                <div align="center" style="color:red;">Photo 7 Error :{{message}}</div>
+                {% endfor %}
+                 {% for message in form.photo8.errors %}
+                <div align="center" style="color:red;">Photo 8 Error :{{message}}</div>
+                {% endfor %}
+                 {% for message in form.photo9.errors %}
+                <div align="center" style="color:red;">Photo 9 Error :{{message}}</div>
+                {% endfor %}
+                 {% for message in form.photo10.errors %}
+                <div align="center" style="color:red;">Photo 10 Error :{{message}}</div>
+                {% endfor %}
+                <p id="reauth-email" class="reauth-email">Send Information About Yourself And Become A Popular Model.<br> If your informations are enough, you may see yourself in models in a short time.<br>* fields are required </p>
+                <h4>* NAME:</h4>{{form.name(placeholder="First Start With Your Name", class="form-control",id="inputEmail")}}
+                <h4>* SURNAME:</h4>{{form.surname(placeholder="Then Continue With Surname", class="form-control",id="inputEmail")}}
+                <h4>* EMAIL:</h4>{{form.email(placeholder="Give us your email for communicate with you", class="form-control",type="email",id="inputEmail")}}
+                <h4>* CATEGORY:</h4>{{form.category(class="form-control",id="inputEmail")}}
+                 <h4>* GENDER:</h4>{{form.gender(class="form-control",id="inputEmail")}}
+                 <h4>* AGE:</h4>{{form.age(placeholder="Let me know your age",class="form-control",id="inputEmail")}}
+                 <h4>* PHONE:</h4>{{form.phone(placeholder="05555555555 Give us your phone number for easy contact",class="form-control",id="inputEmail")}}
+                 <h4>* HEIGHT:</h4>{{form.height(placeholder="Let me know your height(cm)",class="form-control",id="inputEmail")}}
+                 <h4>* WEIGHT:</h4>{{form.weight(placeholder="Let me know your weight(kg)",class="form-control",id="inputEmail")}}
+                <h4>* BODY COLOR:</h4>{{form.bodycolor(class="form-control",id="inputEmail")}}
+                <h4>* EYE COLOR:</h4>{{form.eyecolor(class="form-control",id="inputEmail")}}
+                <h4>* HAIR COLOR:</h4>{{form.haircolor(class="form-control",id="inputEmail")}}
+                <h4>* HAIR TYPE:</h4>{{form.hairtype(class="form-control",id="inputEmail")}}
+                 <h4>* BREAST:</h4>{{form.top(placeholder="Let me know your breast measure(cm)",class="form-control",id="inputEmail")}}
+                 <h4>* WAIST:</h4>{{form.middle(placeholder="Let me know your waist measure(cm)",class="form-control",id="inputEmail")}}
+                 <h4>* HIP:</h4>{{form.bottom(placeholder="Let me know your hip measure(cm)",class="form-control",id="inputEmail")}}
+                <h4>* FOOT:</h4>{{form.foot(placeholder="Let me know your foot number",class="form-control",id="inputEmail")}}
+                <h4>* FACEBOOK:</h4>{{form.facebook(placeholder="Facebook Link Childs can give a parent account http://facebook.com",class="form-control",id="inputEmail")}}
+                <h4>* INSTAGRAM:</h4>{{form.instagram(placeholder="Instagram Link Childs can give a parent account http://instagram.com",class="form-control",id="inputEmail")}}
+                <h4>* TWITTER:</h4> {{form.twitter(placeholder="Twitter Link Childs can give a parent account",class="form-control",id="inputEmail")}}
+                 <h4>* DESCRIPTION:</h4>{{form.description(placeholder="Describe yourself to us hobbies etc. ",class="form-control",id="inputEmail")}}
+               <h4>* PHOTOS (Please select the best ones, 10 photos are required) :</h4>
+                {{form.photo1(class="form-control",id="inputEmail")}}<br>
+                {{form.photo2(class="form-control",id="inputEmail")}}<br>
+                {{form.photo3(class="form-control",id="inputEmail")}}<br>
+                {{form.photo4(class="form-control",id="inputEmail")}}<br>
+                {{form.photo5(class="form-control",id="inputEmail")}}<br>
+                {{form.photo6(class="form-control",id="inputEmail")}}<br>
+                {{form.photo7(class="form-control",id="inputEmail")}}<br>
+                {{form.photo8(class="form-control",id="inputEmail")}}<br>
+                {{form.photo9(class="form-control",id="inputEmail")}}<br>
+                {{form.photo10(class="form-control",id="inputEmail")}}<br>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Take The First Step To Become A Model</button>
+            </form><!-- /form -->
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+{% endblock %}

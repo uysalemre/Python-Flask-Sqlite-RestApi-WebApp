@@ -1,0 +1,42 @@
+{% extends "mainpages/layout.html" %}
+{% block title %} SIGN UP {% endblock %}
+{% block body %}
+<div class="container">
+        <div class="card card-container-login">
+            <form class="form-signin" action="" method="POST">
+                 {{form.csrf_token}}
+                {% with messages=get_flashed_messages() %}
+                    {% if messages %}
+                <div>
+                    {% for message in messages %}
+                    <div align="center" style="color:green;">{{ message }}</div>
+                    {% endfor %}
+                </div>
+                    {% endif %}
+                {% endwith %}
+                {% for message in form.username.errors %}
+                <div align="center" style="color:red;">Username Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.email.errors %}
+                <div align="center" style="color:red;">Email Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.password.errors %}
+                <div align="center" style="color:red;">Password Error : {{message}}</div>
+                {% endfor %}
+                 {% for message in form.passwordAgain.errors %}
+                <div align="center" style="color:red;">Password Confirmation Error : {{message}}</div>
+                {% endfor %}
+                <p id="reauth-email" class="reauth-email">COMPANY SIGN UP <br> * fields are required </p>
+                <h4>* USERNAME:</h4>{{form.username(placeholder="company name", class="form-control",id="inputEmail")}}
+                 <h4>* EMAIL:</h4>{{form.email(placeholder="company email", class="form-control",type="email",id="inputEmail")}}
+                <h4>* PASSWORD:</h4>{{form.password(placeholder="company password", class="form-control",type="password",id="inputPassword")}}
+                <h4>* PASSWORD CONFIRM:</h4>{{form.passwordAgain(placeholder="company password confirmation", class="form-control",type="password",id="inputPassword")}}
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">SIGN UP</button>
+            </form><!-- /form -->
+            <div style="text-align:center;">
+                <button class="btn btn-lg btn-primary btn-block btn-signin" onclick="location.href='{{url_for('website.login')}}'"> I have already signed up ?</button>
+            </div>
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+
+{% endblock %}

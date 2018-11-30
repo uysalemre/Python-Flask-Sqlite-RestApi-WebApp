@@ -1,0 +1,31 @@
+{% extends "mainpages/layout.html" %}
+{% block title %} RESET PASSWORD {% endblock %}
+{% block body %}
+<div class="container">
+        <div class="card card-container-login">
+            <form class="form-signin" action="" method="POST">
+                 {{form.csrf_token}}
+                {% with messages=get_flashed_messages() %}
+                    {% if messages %}
+                <div>
+                    {% for message in messages %}
+                    <div align="center" style="color:green;">{{ message }}</div>
+                    {% endfor %}
+                </div>
+                    {% endif %}
+                {% endwith %}
+                {% for message in form.password.errors %}
+                <div align="center" style="color:red;">Email Error : {{message}}</div>
+                {% endfor %}
+                {% for message in form.confirm.errors %}
+                <div align="center" style="color:red;">Password Error : {{message}}</div>
+                {% endfor %}
+                <p id="reauth-email" class="reauth-email">COMPANY LOGIN </p>
+                <h4>PASSWORD:</h4>{{form.password(placeholder="password", class="form-control",type="password",id="inputPassword")}}
+                 <h4>CONFIRM:</h4>{{form.confirm(placeholder="confirm", class="form-control",type="password",id="inputPassword")}}
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">CONFIRM</button>
+            </form><!-- /form -->
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+
+{% endblock %}

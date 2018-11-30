@@ -1,0 +1,14 @@
+{% extends "mainpages/layout.html" %}
+{% block title %}{{current_user.username}}{% endblock %}
+{% block body %}
+<div class="container-fluid">
+		<div class="row fh5co-post-entry single-entry">
+			<article class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+				<span class="fh5co-meta animate-box"></span>
+				<h2 class="fh5co-article-title animate-box">{{current_user.username}}</h2>
+				<span class="fh5co-meta fh5co-date animate-box">Last Login : {{current_user.last_time}} </span>
+                <span class="fh5co-meta fh5co-date animate-box">We are happy to serve our models to you</span>
+			</article>
+		</div>
+	</div>
+{% endblock %}

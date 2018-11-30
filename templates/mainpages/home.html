@@ -1,0 +1,38 @@
+{% extends "mainpages/layout.html" %}
+{% block title %} HOME {% endblock %}
+{% block body %}
+
+{% if categories %}
+<div class="container-fluid">
+		<div class="row fh5co-post-entry">
+			{% if actors %}
+			{% for actor in actors %}
+			{% if modeling %}
+			{% for category in categories %}
+			{% for model in modeling %}
+			{% if actor.id == model.user_id  and category.id == model.category_id %}
+			<article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
+				{% if photo %}
+				{% for shot in photo %}
+				{% if actor.id == shot.user_id %}
+				<figure>
+					<a href="{{url_for('website.model',category=category.name,id=actor.id)}}"><img src="{{url_for('static',filename='images/model/')}}{{shot.photo1}}" alt="Image" class="img-rounded"></a>
+				</figure>
+				{% endif %}
+				{% endfor %}
+				{% endif %}
+				<span class="fh5co-meta"><a href="{{url_for('website.category',category=category.name)}}">{{category.name}}</a></span>
+		<h2 class="fh5co-article-title"><a href="{{url_for('website.model',category=category.name,id=actor.id)}}">{{actor.name}} {{actor.surname}}</a></h2>
+				<span class="fh5co-meta fh5co-date">Age:{{actor.age}}<br> Gender:{{actor.gender}}</span>
+			</article>
+			{% endif %}
+			{% endfor %}
+			{% endfor %}
+			{% endif %}
+			{% endfor %}
+			{% endif %}
+			<div class="clearfix visible-xs-block"></div>
+		</div>
+</div>
+{% endif %}
+{% endblock %}

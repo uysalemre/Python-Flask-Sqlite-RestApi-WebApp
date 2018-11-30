@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <section id="contact-page">
+        <div class="container">
+            <div class="center">
+                <h2>ADMIN CREATION</h2>
+                <p class="lead"><b>Now you are creating your admin  who is allowed to do add, delete
+                and update operations on this webApp !</b>
+                </p>
+                 <p>* fields are  REQUIRED</p>
+            </div>
+            <div class="row contact-wrap">
+                <div class="status alert alert-success" style="color:black;">
+                     {% if sended %}
+                        <div  align="center">{{sended}}</div>
+                     {%  endif %}
+                     {% for message in form.username.errors %}
+                         <div  align="center">{{message}} USERNAME ERROR</div>
+                     {% endfor %}
+                     {% for message in form.email.errors %}
+                        <div  align="center">{{message}}EMAIL ERROR</div>
+                     {% endfor %}
+                     {% for message in form.password.errors %}
+                        <div  align="center">{{message}} PASSWORD ERROR</div>
+                     {% endfor %}
+
+                </div>
+                <form id="#main-contact-form" class="contact-form" name="contact-form" method="POST" action="" enctype="multipart/form-data">
+                    {{form.csrf_token}}
+                    <div class="col-sm-5 col-sm-offset-1">
+                        <div class="form-group">
+                            <label>USERNAME *</label>
+                            {{form.username(placeholder="username...", class="form-control",type="text",required="required")}}
+                        </div>
+                        <div class="form-group">
+                            <label>EMAİL *</label>
+                            {{form.email(placeholder="email...", class="form-control",type="email",required="required")}}
+                        </div>
+                        <div class="form-group">
+                            <label>APP NAME </label>
+                            {{form.appname(placeholder="appname...", class="form-control")}}
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                          <div class="form-group">
+                            <label>PASSWORD *</label>
+                            {{form.password(placeholder="password...",class="form-control",type="password",required="required")}}
+                        </div>
+                         <div class="form-group">
+                            <label>CONFIRM PASSWORD*</label>
+                            {{form.passwordAgain(placeholder="confirm password...",class="form-control",type="password",required="required")}}
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit"  class="btn btn-primary btn-lg" >GO</button>
+                        </div>
+                    </div>
+                </form>
+            </div><!--/.row-->
+            <div class="status alert alert-success" style="color:black;">
+            </div>
+        </div><!--/.container-->
+    </section><!--/#contact-page-->
+</body>
+</html>
