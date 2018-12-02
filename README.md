@@ -2,7 +2,7 @@
 
 A web application that manages models and companies for a casting agency with an admin panel. This project made for 
 Software Engineering Course in ITU for using **Agile** methodologies in a **Software Development Process**. As an application
-it built on **Python**,**Flask Framework** and **Sqlite** database. 
+it built on **Python**,**Flask Framework** and **Sqlite** database. Also application has the capability of serving models as an **API** to companies which are signed up.
 
 ## Required Libraries For Venv 
 
@@ -30,7 +30,7 @@ it built on **Python**,**Flask Framework** and **Sqlite** database.
 5. Go to http://localhost:3000/admin/
 6. Login to admin page and build your Agency 
 
-**IMPORTANT**: *Note that you can find the following documentation in this reposit under DevOps directory*.
+**IMPORTANT**: *Note that you can find the following documentation in this reposit under [DevOps](DevOps/) directory*.
 
 ## Development Cycle In Agile Methodology
 
@@ -41,34 +41,34 @@ it built on **Python**,**Flask Framework** and **Sqlite** database.
    - [Create The Project Charter](DevOps/projectCharter.pdf)
    
 3. USER STORIES
-   - Define User Types
+   - [Define User Types](DevOps/chart.jpeg)
    - Define Epics
    - Define Non-functional Issues: Security, Performance ...
    - User stories must match with component size and they must be mapped to epics.
-   - A use case for each epic 
+   - [A use case for each epic](DevOps/useCase.png)
 
 4. EARLY SYSTEM MODELS
-   - [Conceptual model](DevOps/conceptual.pdf)
-   - [Flow diagrams - One diagram for each use case , you can use a flowchart or business process model](DevOps/flowchart.pdf)
+   - [Conceptual model](DevOps/dataFlow.pdf)
+   - [Flow diagrams - One diagram for each use case , you can use a flowchart or business process model](DevOps/secondFlowChart.PNG)
 
 5. FIRST SPRINT
-   - [Mockups, Unit Test related to User Stories](DevOps/mockup.bmpr)
+   - [Mockups, Unit Test related to User Stories](DevOps/mockups.bmpr)
    
 6. MEETING
    - Make a customer meeting to show to development process and check requirements again.
    - Make some commits.
   
 7. DATA MODEL
-   - Create ER diagrams for DB
+   - [Create ER diagrams for DB](DevOps/erDiagram.png)
    
 8. SOFTWARE MODEL
-   - System Architecture
-   - Component Diagram
-   - Sequence Diagram
+   - [System Architecture](DevOps/System Architecture.png)
+   - [Component Diagram](DevOps/componentDiagram.jpeg)
+   - [Sequence Diagram](DevOps/communicationDiagram.jpeg)
    
 9. SECOND and THIRD SPRINT
    - Change Logs for First Sprint
-   - Mockups
+   - [Mockups for Unit Tests](DevOps/unit test mockups/)
    
   
   
@@ -79,10 +79,10 @@ it built on **Python**,**Flask Framework** and **Sqlite** database.
    - [x] Create Conceptual Model
    - [x] First Sprint 
    - [x] Make a customer meeting and commit files for first version.
-   - [ ] Create Data Model and ER diagrams
-   - [ ] Create System Architecture
-   - [ ] Create Component Diagram
-   - [ ] Create Sequence Diagram
+   - [x] Create Data Model and ER diagrams
+   - [x] Create System Architecture
+   - [x] Create Component Diagram
+   - [x] Create Sequence Diagram
    - [ ] Complete Second and Third Sprint
 
 
