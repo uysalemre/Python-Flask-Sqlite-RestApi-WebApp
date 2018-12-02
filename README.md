@@ -62,7 +62,7 @@ it built on **Python**,**Flask Framework** and **Sqlite** database. Also applica
    - [Create ER diagrams for DB](DevOps/erDiagram.png)
    
 8. SOFTWARE MODEL
-   - [System Architecture](DevOps/System Architecture.png)
+   - [System Architecture](https://github.com/uysalemre/CastAgencyWebApp/blob/master/DevOps/System%20Architecture.png)
    - [Component Diagram](DevOps/componentDiagram.jpeg)
    - [Sequence Diagram](DevOps/communicationDiagram.PNG)
    
