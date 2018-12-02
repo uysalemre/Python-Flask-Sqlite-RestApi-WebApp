@@ -48,11 +48,11 @@ it built on **Python**,**Flask Framework** and **Sqlite** database. Also applica
    - [A use case for each epic](DevOps/useCase.png)
 
 4. EARLY SYSTEM MODELS
-   - [Conceptual model](DevOps/dataFlow.pdf)
+   - [Conceptual model](DevOps/dataFlow.png)
    - [Flow diagrams - One diagram for each use case , you can use a flowchart or business process model](DevOps/secondFlowChart.PNG)
 
 5. FIRST SPRINT
-   - [Mockups, Unit Test related to User Stories](DevOps/mockups.bmpr)
+   - [Mockups Unit Test related to User Stories](DevOps/mockups.bmpr)
    
 6. MEETING
    - Make a customer meeting to show to development process and check requirements again.
@@ -64,7 +64,7 @@ it built on **Python**,**Flask Framework** and **Sqlite** database. Also applica
 8. SOFTWARE MODEL
    - [System Architecture](DevOps/System Architecture.png)
    - [Component Diagram](DevOps/componentDiagram.jpeg)
-   - [Sequence Diagram](DevOps/communicationDiagram.jpeg)
+   - [Sequence Diagram](DevOps/communicationDiagram.PNG)
    
 9. SECOND and THIRD SPRINT
    - Change Logs for First Sprint
