@@ -83,7 +83,8 @@ it built on **Python**,**Flask Framework** and **Sqlite** database. Also applica
    - [x] Create System Architecture
    - [x] Create Component Diagram
    - [x] Create Sequence Diagram
-   - [ ] Complete Second and Third Sprint
+   - [x] Complete Second and Third Sprint
+   - [x] Test Codes Completed 
 
 
 
