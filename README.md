@@ -88,7 +88,7 @@ it built on **Python**,**Flask Framework** and **Sqlite** database. Also applica
    
 
 ## How to Deploy This Project ? (For example : Pythonanywhere)
-   - Create an account from [HERE]((https://pythonanywhere.com/)
+   - Create an account from [HERE](https://pythonanywhere.com/)
    - Create a Flask application from WEB.
    - After that upload your files under FILES.
    - Now you need to configure your virtualenv for used packages.[Here is an explanation](https://help.pythonanywhere.com/pages/Virtualenvs/)
