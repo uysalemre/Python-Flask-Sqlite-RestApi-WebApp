@@ -1,7 +1,4 @@
 # Cast Agency Web App 
-[![star this repo](http://githubbadges.com/star.svg?user=uysalemre&repo=Python-Flask-Sqlite-RestApi-WebApp&style=default)](https://github.com/uysalemre/Python-Flask-Sqlite-RestApi-WebApp)
-[![fork this repo](http://githubbadges.com/fork.svg?user=uysalemre&repo=Python-Flask-Sqlite-RestApi-WebApp&style=default)](https://github.com/uysalemre/Python-Flask-Sqlite-RestApi-WebApp/fork)
-[![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.png?v=103)](https://opensource.org/licenses/GPL-3.0/)
 
 A web application that manages models and companies for a casting agency with an admin panel. This project made for 
 Software Engineering Course in ITU for using **Agile** methodologies in a **Software Development Process**. As an application
