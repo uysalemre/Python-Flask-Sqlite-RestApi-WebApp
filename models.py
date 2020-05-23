@@ -8,12 +8,12 @@ import datetime
 class Setup(Base):
     __tablename__ = 'setup'
     id = Column(Integer(), primary_key=True, autoincrement=True)
-    appname = Column(String(50),unique=True,nullable=False)
-    settted = Column(Boolean(),default=False)
+    appname = Column(String(50), unique=True, nullable=False)
+    settted = Column(Boolean(), default=False)
 
-    def __init__(self,appname=None,setted=None):
-        self.appname=appname
-        self.settted=setted
+    def __init__(self, appname=None, setted=None):
+        self.appname = appname
+        self.settted = setted
 
 
 class RolesUsers(Base):
@@ -49,7 +49,7 @@ class User(Base, UserMixin):
     password = Column(String(255))
     active = Column(Boolean())
     last_time = Column(DateTime())
-    roles = relationship('Role', secondary='roles_users',backref=backref('users', lazy='dynamic'))
+    roles = relationship('Role', secondary='roles_users', backref=backref('users', lazy='dynamic'))
 
     def __init__(self, email=None, username=None, password=None, active=None, last_time=None):
         self.email = email
@@ -57,7 +57,6 @@ class User(Base, UserMixin):
         self.password = password
         self.active = active
         self.last_time = last_time
-
 
 
 class Agency(Base):
@@ -72,7 +71,8 @@ class Agency(Base):
     facebook = Column(Text, nullable=True)
     twitter = Column(Text, nullable=True)
 
-    def __init__(self, company=None, phone=None, director=None, photo=None, description=None, instagram=None, facebook=None, twitter=None):
+    def __init__(self, company=None, phone=None, director=None, photo=None, description=None, instagram=None,
+                 facebook=None, twitter=None):
         self.company = company
         self.phone = phone
         self.director = director
@@ -125,7 +125,7 @@ class Actors(Base):
     gender = Column(String(50), nullable=False)
     age = Column(Integer(), nullable=False)
     phone = Column(Integer(), nullable=False)
-    category = relationship('Categories',secondary='actormodel',backref=backref('actors'))
+    category = relationship('Categories', secondary='actormodel', backref=backref('actors'))
 
     def __init__(self, name=None, surname=None, email=None, activated=None, gender=None, age=None, phone=None):
         self.name = name
@@ -170,7 +170,8 @@ class Photos(Base):
     photo10 = Column(Text, default="no-data")
     actor = relationship('Actors', backref=backref('photo'))
 
-    def __init__(self, user_id=None, photo1=None, photo2=None, photo3=None, photo4=None, photo5=None, photo6=None, photo7=None, photo8=None, photo9=None, photo10=None):
+    def __init__(self, user_id=None, photo1=None, photo2=None, photo3=None, photo4=None, photo5=None, photo6=None,
+                 photo7=None, photo8=None, photo9=None, photo10=None):
         self.user_id = user_id
         self.photo1 = photo1
         self.photo2 = photo2
@@ -198,9 +199,10 @@ class ActorBody(Base):
     middle = Column(Integer(), nullable=True)
     bottom = Column(Integer(), nullable=True)
     foot = Column(Integer(), nullable=True)
-    actor = relationship('Actors',backref=backref('body'))
+    actor = relationship('Actors', backref=backref('body'))
 
-    def __init__(self, user_id=None, height=None, weight=None, bodycolor=None, haircolor=None, hairtype=None, eyecolor=None, top=None, middle=None, bottom=None, foot=None):
+    def __init__(self, user_id=None, height=None, weight=None, bodycolor=None, haircolor=None, hairtype=None,
+                 eyecolor=None, top=None, middle=None, bottom=None, foot=None):
         self.user_id = user_id
         self.height = height
         self.weight = weight
@@ -232,7 +234,6 @@ class ActorSoul(Base):
         self.description = description
 
 
-
 class ActorModel(Base):
     __tablename__ = 'actormodel'
     id = Column(Integer, primary_key=True, autoincrement=True)
@@ -254,8 +255,7 @@ class TempActors(Base):
     gender = Column(String(50), nullable=False)
     age = Column(Integer(), nullable=False)
     phone = Column(Integer(), nullable=False)
-    category = relationship('Categories',secondary='Tempactormodel',backref=backref('tempactors'))
-
+    category = relationship('Categories', secondary='Tempactormodel', backref=backref('tempactors'))
 
     def __init__(self, name=None, surname=None, email=None, activated=None, gender=None, age=None, phone=None):
         self.name = name
@@ -282,7 +282,8 @@ class TempPhotos(Base):
     photo9 = Column(Text, default="no-data")
     photo10 = Column(Text, default="no-data")
 
-    def __init__(self, user_id=None, photo1=None, photo2=None, photo3=None, photo4=None, photo5=None, photo6=None, photo7=None, photo8=None, photo9=None, photo10=None):
+    def __init__(self, user_id=None, photo1=None, photo2=None, photo3=None, photo4=None, photo5=None, photo6=None,
+                 photo7=None, photo8=None, photo9=None, photo10=None):
         self.user_id = user_id
         self.photo1 = photo1
         self.photo2 = photo2
@@ -311,7 +312,8 @@ class TempActorBody(Base):
     bottom = Column(Integer(), nullable=True)
     foot = Column(Integer(), nullable=True)
 
-    def __init__(self, user_id=None, height=None, weight=None, bodycolor=None, haircolor=None, hairtype=None, eyecolor=None, top=None, middle=None, bottom=None, foot=None):
+    def __init__(self, user_id=None, height=None, weight=None, bodycolor=None, haircolor=None, hairtype=None,
+                 eyecolor=None, top=None, middle=None, bottom=None, foot=None):
         self.user_id = user_id
         self.height = height
         self.weight = weight
@@ -354,13 +356,11 @@ class TempActorModel(Base):
 
 
 class Logs(Base):
-    __tablename__='logs'
+    __tablename__ = 'logs'
     id = Column(Integer, primary_key=True, autoincrement=True)
     ip = Column(Integer())
     describe = Column(Text)
 
-    def __init__(self,ip,describe):
+    def __init__(self, ip, describe):
         self.ip = ip
         self.describe = describe
-
-

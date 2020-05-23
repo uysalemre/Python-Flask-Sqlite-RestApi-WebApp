@@ -1,24 +1,24 @@
 from flask_restful import Resource, reqparse, abort, marshal_with
-from api.fields import actor_fields,serve_fields
+from api.fields import actor_fields, serve_fields
 from models import *
-from flask_security import login_required,roles_accepted
+from flask_security import login_required, roles_accepted
 
 
 class ActorsListApi(Resource):
     def __init__(self):
         self.reqparse = reqparse.RequestParser()
-        self.reqparse.add_argument('name',type=str)
-        self.reqparse.add_argument('surname',type=str)
-        self.reqparse.add_argument('hashed',type=str)
+        self.reqparse.add_argument('name', type=str)
+        self.reqparse.add_argument('surname', type=str)
+        self.reqparse.add_argument('hashed', type=str)
 
     @login_required
-    @roles_accepted('Admin','Guest')
+    @roles_accepted('Admin', 'Guest')
     @marshal_with(serve_fields)
     def get(self):
         mockData = []
         ids = ActorModel.query.all()
         if not ids:
-            abort(404,message="There is no available actor data")
+            abort(404, message="There is no available actor data")
         for id in ids:
             model_data = Actors.query.filter_by(id=id.user_id).first()
             temp_fields = {
@@ -28,14 +28,13 @@ class ActorsListApi(Resource):
             mockData.append(temp_fields)
         return mockData
 
-
     @login_required
-    @roles_accepted('Admin','Guest')
+    @roles_accepted('Admin', 'Guest')
     @marshal_with(actor_fields)
     def post(self):
         parsed = self.reqparse.parse_args()
         mockData = []
-        actor = Actors.query.filter_by(name=parsed['name'],surname=parsed['surname']).first()
+        actor = Actors.query.filter_by(name=parsed['name'], surname=parsed['surname']).first()
         category_data = Categories.query.filter_by(id=actor.id).first()
         photo_data = Photos.query.filter_by(user_id=actor.id).first()
         body_data = ActorBody.query.filter_by(user_id=actor.id).first()
@@ -68,24 +67,3 @@ class ActorsListApi(Resource):
         }
         mockData.append(temp_fields)
         return mockData
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
